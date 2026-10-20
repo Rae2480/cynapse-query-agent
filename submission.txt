@@ -111,3 +111,8 @@ Supporting files
   .gitignore: Keeps credentials, environments and generated files out of Git.
   README.md: Quick setup and commands.
   submission.txt: Design explanation, verification results and this walkthrough.
+
+Codex declaration
+I used OpenAI Codex to help develop and refactor the code, explain its behavior,
+write tests and documentation, and run live API evaluations. I used it to identify
+and fix issues in date handling, guardrails and conversational context.
