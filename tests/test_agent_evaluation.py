@@ -2,9 +2,9 @@ from datetime import datetime
 
 import pytest
 
-from cynapse.database_manager import seed
+from cynapse.helpers.database.database_manager import seed
 from evaluations.evaluate_agent import check_case, run_cases
-from cynapse.openai_client import ExtractionError, LLMExtractor
+from cynapse.helpers.openai_client import ExtractionError, LLMExtractor
 from cynapse.settings import SG
 
 NOW = datetime(2026, 1, 3, 12, tzinfo=SG)

@@ -1,7 +1,7 @@
 """Bound request size and expire idle conversation context before routing."""
 from datetime import timedelta
 
-from cynapse.context_manager import reset_context
+from cynapse.helpers.context_manager import reset_context
 from cynapse.settings import CONTEXT_IDLE_MINUTES, MAX_REQUEST_CHARS
 from cynapse.state import State
 

@@ -71,4 +71,4 @@ python -m evaluations.evaluate_extraction --model openai:gpt-5-mini
 ```
 
 The database is generated locally. Never commit `.env` or API keys.
-See [submission.txt](submission.txt) for the design, results and file walkthrough.
+See [submission.md](submission.md) for the design, results and file walkthrough.

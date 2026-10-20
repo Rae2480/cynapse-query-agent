@@ -6,8 +6,8 @@ from datetime import datetime
 from pathlib import Path
 from time import perf_counter
 
-from cynapse.data_models import QueryPlan
-from cynapse.openai_client import ExtractionError, configured_extractor
+from cynapse.helpers.data_models import QueryPlan
+from cynapse.helpers.openai_client import ExtractionError, configured_extractor
 
 
 def compare(actual: dict, expected: dict):

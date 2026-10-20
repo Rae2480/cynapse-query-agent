@@ -14,11 +14,11 @@ from pathlib import Path
 
 import pytest
 
-from cynapse.database_manager import seed, query
+from cynapse.helpers.database.database_manager import seed, query
 from evaluations.evaluate_agent import NOW, run_cases, check_case
 from evaluations.evaluate_extraction import run_extractions
 from cynapse.orchestration import build_graph
-from cynapse.openai_client import configured_extractor
+from cynapse.helpers.openai_client import configured_extractor
 
 # Five verbatim query examples, the two-turn follow-up, and camera-name variants
 # from the Agentic AI section of the assignment (not the Computer Vision option).
@@ -95,8 +95,8 @@ def test_assignment_input_with_nonai(case, nonai_database, monkeypatch):
         pytest.fail("The nonai version must never initialize or call OpenAI")
 
     monkeypatch.delenv("OPENAI_API_KEY", raising=False)
-    monkeypatch.setattr("cynapse.openai_client.configured_extractor", forbidden)
-    monkeypatch.setattr("cynapse.openai_client.LLMExtractor.__call__", forbidden)
+    monkeypatch.setattr("cynapse.helpers.openai_client.configured_extractor", forbidden)
+    monkeypatch.setattr("cynapse.helpers.openai_client.LLMExtractor.__call__", forbidden)
     calls = []
 
     def tracked_query(*args):

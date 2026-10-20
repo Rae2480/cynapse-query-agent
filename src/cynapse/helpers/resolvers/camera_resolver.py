@@ -10,7 +10,7 @@ import re
 import unicodedata
 from difflib import SequenceMatcher
 
-from cynapse.data_models import Camera
+from cynapse.helpers.data_models import Camera
 
 
 def normalize(mention: str):

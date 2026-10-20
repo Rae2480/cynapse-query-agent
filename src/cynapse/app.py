@@ -12,9 +12,9 @@ import json
 from datetime import datetime
 from pathlib import Path
 
-from cynapse.database_manager import SG, seed
+from cynapse.helpers.database.database_manager import SG, seed
 from cynapse.orchestration import build_graph
-from cynapse.openai_client import configured_extractor
+from cynapse.helpers.openai_client import configured_extractor
 
 
 def main():

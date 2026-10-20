@@ -6,8 +6,8 @@ from pathlib import Path
 import pytest
 
 from cynapse import orchestration as graph_module
-from cynapse.database_manager import SG, seed
-from cynapse.data_models import Camera
+from cynapse.helpers.database.database_manager import SG, seed
+from cynapse.helpers.data_models import Camera
 
 NOW = datetime(2026, 10, 18, 12, tzinfo=SG)
 CASES = json.loads(Path(__file__).with_name("evaluation_cases.json").read_text())

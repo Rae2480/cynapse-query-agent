@@ -9,9 +9,9 @@ from importlib.metadata import version
 from pathlib import Path
 from time import perf_counter
 
-from cynapse.database_manager import query, seed
-from cynapse.data_models import Extraction
-from cynapse.query_planner import resolve_extraction
+from cynapse.helpers.database.database_manager import query, seed
+from cynapse.helpers.data_models import Extraction
+from cynapse.helpers.resolvers.query_planner import resolve_extraction
 from cynapse.settings import SG
 
 NOW = datetime(2026, 10, 18, 12, tzinfo=SG)

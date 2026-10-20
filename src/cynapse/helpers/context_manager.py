@@ -2,7 +2,7 @@
 import re
 from datetime import datetime
 
-from cynapse.data_models import Extraction
+from cynapse.helpers.data_models import Extraction
 from cynapse.state import State
 
 

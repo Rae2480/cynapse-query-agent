@@ -1,7 +1,7 @@
 """Filter resolver role in the query workflow."""
-from cynapse.context_manager import pending_query
-from cynapse.data_models import Extraction, QueryPlan
-from cynapse.query_planner import resolve_extraction
+from cynapse.helpers.context_manager import pending_query
+from cynapse.helpers.data_models import Extraction, QueryPlan
+from cynapse.helpers.resolvers.query_planner import resolve_extraction
 from cynapse.state import State
 
 

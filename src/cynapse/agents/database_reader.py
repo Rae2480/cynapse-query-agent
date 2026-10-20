@@ -1,8 +1,8 @@
 """Database reader role in the query workflow."""
 from pathlib import Path
 
-from cynapse.database_manager import query
-from cynapse.data_models import QueryPlan
+from cynapse.helpers.database.database_manager import query
+from cynapse.helpers.data_models import QueryPlan
 from cynapse.state import State
 
 

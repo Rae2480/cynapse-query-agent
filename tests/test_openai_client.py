@@ -7,10 +7,10 @@ from unittest.mock import Mock
 import pytest
 from pydantic import ValidationError
 
-from cynapse.database_manager import SG, seed
-from cynapse.data_models import Camera, QueryPlan
-from cynapse.data_models import Extraction
-from cynapse.openai_client import ExtractionError, LLMExtractor
+from cynapse.helpers.database.database_manager import SG, seed
+from cynapse.helpers.data_models import Camera, QueryPlan
+from cynapse.helpers.data_models import Extraction
+from cynapse.helpers.openai_client import ExtractionError, LLMExtractor
 from cynapse.orchestration import build_graph
 
 NOW = datetime(2026, 1, 3, 12, tzinfo=SG)
@@ -158,7 +158,7 @@ def test_explicit_clear_date_and_new_search(database):
 
 def test_model_factory_uses_explicit_model_and_disables_retries(monkeypatch):
     import sys
-    from cynapse.openai_client import configured_extractor
+    from cynapse.helpers.openai_client import configured_extractor
     factory = Mock(return_value=FakeModel(payload()))
     monkeypatch.setitem(sys.modules, "langchain.chat_models", SimpleNamespace(init_chat_model=factory))
     configured_extractor("openai:gpt-5-mini")
@@ -166,7 +166,7 @@ def test_model_factory_uses_explicit_model_and_disables_retries(monkeypatch):
 
 
 def test_missing_configuration_has_actionable_error(monkeypatch):
-    from cynapse.openai_client import configured_extractor
+    from cynapse.helpers.openai_client import configured_extractor
     monkeypatch.delenv("CYNAPSE_MODEL", raising=False)
     with pytest.raises(ValueError, match="CYNAPSE_MODEL"):
         configured_extractor()
@@ -182,7 +182,7 @@ def test_benchmark_compares_nested_fields():
 
 def test_openai_factory_requests_strict_json_schema(monkeypatch):
     import sys
-    from cynapse.openai_client import configured_extractor
+    from cynapse.helpers.openai_client import configured_extractor
     model = FakeModel(payload())
     monkeypatch.setitem(sys.modules, "langchain.chat_models", SimpleNamespace(init_chat_model=Mock(return_value=model)))
     configured_extractor("openai:gpt-5-mini")
@@ -191,7 +191,7 @@ def test_openai_factory_requests_strict_json_schema(monkeypatch):
 
 def test_non_openai_model_is_rejected_before_initialization(monkeypatch):
     import sys
-    from cynapse.openai_client import configured_extractor
+    from cynapse.helpers.openai_client import configured_extractor
     factory = Mock()
     monkeypatch.setitem(sys.modules, "langchain.chat_models", SimpleNamespace(init_chat_model=factory))
     with pytest.raises(ValueError, match="Only OpenAI"):
@@ -280,7 +280,7 @@ def test_malformed_output_has_safe_call_status():
 
 
 def test_extracted_context_fields_have_size_limits():
-    from cynapse.data_models import Extraction
+    from cynapse.helpers.data_models import Extraction
     from pydantic import ValidationError
 
     oversized_filter = payload()

@@ -2,10 +2,10 @@ from datetime import datetime, timedelta
 
 import pytest
 
-from cynapse.database_manager import SG, seed
-from cynapse.data_models import Camera
+from cynapse.helpers.database.database_manager import SG, seed
+from cynapse.helpers.data_models import Camera
 from cynapse.orchestration import build_graph
-from cynapse.nonai_extractor import extract_nonai
+from cynapse.agents.nonai_extractor import extract_nonai
 
 NOW = datetime(2026, 1, 3, 12, tzinfo=SG)
 

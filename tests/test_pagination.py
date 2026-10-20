@@ -4,8 +4,8 @@ from unittest.mock import Mock
 import pytest
 
 from cynapse.agents import database_reader as agents
-from cynapse.database_manager import query, seed
-from cynapse.data_models import Camera, QueryPlan
+from cynapse.helpers.database.database_manager import query, seed
+from cynapse.helpers.data_models import Camera, QueryPlan
 from cynapse.orchestration import build_graph
 from cynapse.settings import SG
 

@@ -7,9 +7,9 @@ No model client, API key or network access is used.
 import re
 from datetime import datetime
 
-from cynapse.camera_resolver import resolve_camera
-from cynapse.data_models import Extraction, QueryPlan
-from cynapse.time_resolver import normalize, resolve_date
+from cynapse.helpers.resolvers.camera_resolver import resolve_camera
+from cynapse.helpers.data_models import Extraction, QueryPlan
+from cynapse.helpers.resolvers.time_resolver import normalize, resolve_date
 
 CLOCK = r"(?:\d{1,2}(?::\d{2})?\s*[ap]\.?m\.?|\d{2}:\d{2}|noon|midnight)"
 TIME_RANGE = re.compile(rf"\b(?:(?:between|from)\s+)?{CLOCK}\s*(?:to|and|until|-)\s*{CLOCK}\b")

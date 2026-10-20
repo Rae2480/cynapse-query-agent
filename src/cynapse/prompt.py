@@ -1,5 +1,5 @@
 """Instructions for structured query interpretation."""
-from cynapse.data_models import Camera
+from cynapse.helpers.data_models import Camera
 
 PROMPT = """Extract CCTV frame-metadata query intent, never SQL or resolved timestamps.
 Allowed fields: camera name, date window, daily time range, recurring weekdays.

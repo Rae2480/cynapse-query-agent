@@ -6,8 +6,8 @@ from langgraph.checkpoint.memory import InMemorySaver
 from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
 from langgraph.graph import END, START, StateGraph
 
-from cynapse.context_manager import is_reset_request
-from cynapse.nonai_extractor import extract_nonai
+from cynapse.helpers.context_manager import is_reset_request
+from cynapse.agents.nonai_extractor import extract_nonai
 from cynapse.agents.context_guard import context_guard
 from cynapse.agents.context_resetter import context_resetter
 from cynapse.agents.intent_extractor import intent_extractor
@@ -83,6 +83,6 @@ def build_graph(path: Path, parser=None, *, extractor=None, query_fn=None):
     for name in ("context_resetter", "database_reader", "answerer", "page_navigator"):
         graph.add_edge(name, END)
     serde = JsonPlusSerializer(allowed_msgpack_modules=[
-        ("cynapse.data_models", "Camera"), ("cynapse.data_models", "QueryPlan"),
+        ("cynapse.helpers.data_models", "Camera"), ("cynapse.helpers.data_models", "QueryPlan"),
     ])
     return graph.compile(checkpointer=InMemorySaver(serde=serde))

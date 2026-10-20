@@ -4,7 +4,7 @@ import sqlite3
 from datetime import datetime, timedelta
 from pathlib import Path
 
-from cynapse.data_models import Camera, QueryPlan
+from cynapse.helpers.data_models import Camera, QueryPlan
 from cynapse.settings import SG
 
 

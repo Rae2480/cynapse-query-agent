@@ -6,10 +6,10 @@ import pytest
 from pydantic import ValidationError
 
 from cynapse import orchestration as graph_module
-from cynapse.database_manager import SG, seed
-from cynapse.data_models import Camera, QueryPlan
-from cynapse.data_models import Extraction
-from cynapse.time_resolver import resolve_date, resolve_time, resolve_weekday
+from cynapse.helpers.database.database_manager import SG, seed
+from cynapse.helpers.data_models import Camera, QueryPlan
+from cynapse.helpers.data_models import Extraction
+from cynapse.helpers.resolvers.time_resolver import resolve_date, resolve_time, resolve_weekday
 
 NOW = datetime(2026, 10, 18, 12, tzinfo=SG)
 

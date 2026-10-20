@@ -2,7 +2,7 @@
 from datetime import datetime
 from typing import TypedDict
 
-from cynapse.data_models import QueryPlan
+from cynapse.helpers.data_models import QueryPlan
 
 
 class State(TypedDict, total=False):

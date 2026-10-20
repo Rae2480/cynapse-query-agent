@@ -9,7 +9,7 @@ from time import perf_counter
 from pydantic import BaseModel
 
 from cynapse.settings import LLM_TIMEOUT_SECONDS, SG
-from cynapse.data_models import Extraction, QueryPlan
+from cynapse.helpers.data_models import Extraction, QueryPlan
 from cynapse.prompt import PROMPT
 
 

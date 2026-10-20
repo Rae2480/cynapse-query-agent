@@ -2,11 +2,11 @@ from datetime import datetime
 
 import pytest
 
-from cynapse import camera_resolver as cameras
-from cynapse.camera_resolver import CameraResolutionError, resolve_camera
-from cynapse.database_manager import SG, seed
-from cynapse.data_models import Camera
-from cynapse.data_models import Extraction
+from cynapse.helpers.resolvers import camera_resolver as cameras
+from cynapse.helpers.resolvers.camera_resolver import CameraResolutionError, resolve_camera
+from cynapse.helpers.database.database_manager import SG, seed
+from cynapse.helpers.data_models import Camera
+from cynapse.helpers.data_models import Extraction
 from cynapse.orchestration import build_graph
 
 

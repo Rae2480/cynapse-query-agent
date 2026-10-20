@@ -1,8 +1,8 @@
 """Query validator role in the query workflow."""
 from datetime import datetime, timedelta
 
-from cynapse.context_manager import pending_query
-from cynapse.data_models import QueryPlan
+from cynapse.helpers.context_manager import pending_query
+from cynapse.helpers.data_models import QueryPlan
 from cynapse.settings import SG
 from cynapse.state import State
 

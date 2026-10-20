@@ -3,8 +3,8 @@ import logging
 import sqlite3
 from datetime import datetime
 
-from cynapse.database_manager import SG, seed
-from cynapse.data_models import Camera, QueryPlan
+from cynapse.helpers.database.database_manager import SG, seed
+from cynapse.helpers.data_models import Camera, QueryPlan
 from cynapse.orchestration import build_graph
 
 

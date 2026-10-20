@@ -1,7 +1,7 @@
 """Intent extractor role in the query workflow."""
-from cynapse.context_manager import prepare_query
-from cynapse.data_models import Extraction
-from cynapse.openai_client import ExtractionError
+from cynapse.helpers.context_manager import prepare_query
+from cynapse.helpers.data_models import Extraction
+from cynapse.helpers.openai_client import ExtractionError
 from cynapse.state import State
 
 

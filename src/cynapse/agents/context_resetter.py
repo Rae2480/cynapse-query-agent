@@ -1,5 +1,5 @@
 """Context resetter role in the query workflow."""
-from cynapse.context_manager import reset_context
+from cynapse.helpers.context_manager import reset_context
 from cynapse.state import State
 
 

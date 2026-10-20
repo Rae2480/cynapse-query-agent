@@ -5,9 +5,9 @@ from unittest.mock import Mock
 import pytest
 
 from cynapse import orchestration as module
-from cynapse.database_manager import SG, seed
-from cynapse.data_models import Camera
-from cynapse.openai_client import ExtractionError, LLMExtractor
+from cynapse.helpers.database.database_manager import SG, seed
+from cynapse.helpers.data_models import Camera
+from cynapse.helpers.openai_client import ExtractionError, LLMExtractor
 
 NOW = datetime(2026, 1, 3, 12, tzinfo=SG)
 
